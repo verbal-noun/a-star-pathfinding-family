@@ -1,32 +1,24 @@
 from a_star import * 
 from grid import * 
-
-def bfs_1(graph, start, goal):
-    # We will print what we find 
-    frontier = Queue()
-    frontier.put(start)
-    # Dictionary to hold the visited nodes and their source 
-    came_from = {}
-    came_from[start] = None
-
-    # Perfrom the breadth first search 
-    while not frontier.isEmpty():
-        current = frontier.get()
-
-        # Check if goal is reached or not 
-        if current == goal: 
-            break 
-        # Check for neighbors 
-        for next in graph.neighbors(current): 
-            if next not in came_from:
-                frontier.put(next)
-                came_from[next] = current
-    
-    return came_from
+from other_algorithms import *
 
 
 g = SquareGrid(30, 15)
 g.walls = DIAGRAM1_WALLS  
 
-parents  = bfs_1(g, (8, 7), (17, 2))
-draw_grid(g, width=2, point_to=parents, start=(8,7), goal=(17, 2))
+#parents  = bfs_search(g, (8, 7), (17, 2))
+#draw_grid(g, width=2, point_to=parents, start=(8,7), goal=(17, 2))
+came_from, cost_so_far = dijkstra_search(diagram4, (1, 4), (7, 8))
+# draw_grid(diagram4, width=3, point_to=came_from, start=(1, 4), goal=(7, 8))
+# print()
+# draw_grid(diagram4, width=3, number=cost_so_far, start=(1, 4), goal=(7, 8))
+# print()
+draw_grid(diagram4, width=3, path=reconstruct_path(came_from, start=(1, 4), goal=(7, 8)))
+print()
+
+
+# Testing a-start 
+start, goal = (1, 4), (7, 8)
+# Calculating the cost and node origins 
+came_from, cost_so_far = a_star_search(diagram4, start, goal)
+draw_grid(diagram4, width=3, path=reconstruct_path(came_from, start, goal))
