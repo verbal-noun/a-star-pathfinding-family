@@ -12,7 +12,7 @@ Instead of searching from the start to the finish, we can start two searches in 
 
 Uni-directional A*          |      Bidirectional A*
 --------------------|---------------------
-![Regular A star](img/unidirectional-astar.png)   | ![Bidirectional A*](img/bidirectional-astar.png)
+![Regular A star](img/unidirectional-a-star.png)   | ![Bidirectional A*](img/bidirectional-astar.png)
 
 
 Time complexity:
