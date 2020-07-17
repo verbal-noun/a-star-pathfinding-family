@@ -3,13 +3,13 @@ This repository is part of my work for the Melbourne Space Program. In this repo
 
 # Compared Algorithms 
 1. Base A-Star 
-2. Simplistic Bidirectional A-Star 
+2. Simple Bidirectional A-Star 
 3. Weighted A* 
 
 More algorithms under progress. 
 
 # Implemented Heuristics 
-1. Euclidian Heuristic 
+1. Euclidean Heuristic 
 2. Manhattan Distance 
 3. Diagonal Distance 
 
