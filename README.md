@@ -100,3 +100,19 @@ Here are some sample outputs of different algorithms run on the same diagram:
 ![Bidirection A*](img/bidirectional-output.png)
 
 ![Weighted A*](img/weighted-output.png)
+
+
+### Different Diagrams 
+There are 4 different diagram choices available named diagram1 .... digram4 
+You can select the diagram of your choice 
+
+```
+grid = diagram[You choice of diagram no.]
+```
+
+You should also make sure the start and goal coordinates are valid as different dimensions. The diagrams can be found in '/maze/diagrams.py'
+
+``` 
+start, goal = (x, y), (u, v)
+```
+The diagrams also vary on the weight of each cell as well as wall configuration. 
