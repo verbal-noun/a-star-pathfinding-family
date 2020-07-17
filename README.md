@@ -78,12 +78,25 @@ Research Paper: https://www.cs.auckland.ac.nz/courses/compsci709s2c/resources/Mi
 
 Name of Heuristic | Equation of Heuristic 
 ------------------|----------------------
-Euclidean Distance | h(n) = sqrt((x<sub>goal</sub> - x)<sup>2</sup> + (y<sub>goal</sub> - y)<sup>2</sup>)
-Manhattan Distance | h(n) = abs((x<sub>goal</sub> - x) + abs((y<sub>goal</sub> - y))
-Diagonal Distance | h(n) = max(abs((x<sub>goal</sub> - x), abs((y<sub>goal</sub> - y)))
+Euclidean Distance | h(n) = sqrt( (x<sub>goal</sub> - x)<sup>2</sup> + (y<sub>goal</sub> - y)<sup>2</sup> )
+Manhattan Distance | h(n) = abs((x<sub>goal</sub> - x)) + abs((y<sub>goal</sub> - y))
+Diagonal Distance | h(n) = max(abs((x<sub>goal</sub> - x)), abs((y<sub>goal</sub> - y)))
 
  
 
 # Running instructions 
 
-Under Progress 
+To see the output of different functions simply run 
+
+```python3 
+python tester.py
+```
+
+
+Here are some sample outputs of different algorithms run on the same diagram: 
+
+![Regular A*](img/regular-output.png)
+
+![Bidirection A*](img/bidirectional-output.png)
+
+![Weighted A*](img/weighted-output.png)
