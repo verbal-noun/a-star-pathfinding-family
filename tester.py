@@ -2,6 +2,7 @@ import time
 from a_star import * 
 from grid import * 
 from other_algorithms import *
+from a_star_variants import *
 
 
 g = SquareGrid(30, 15)
@@ -27,9 +28,9 @@ print('TIme taken: %f\n' % end_time)
 print('\n')
 
 
-# Testing bidirectional search 
+# Testing variants  
 start_time = time.time()
-path = bidirectional_a_star(diagram4, start, goal)
+path = weighted_a_star(diagram4, start, goal)
 draw_grid(diagram4, width=3, path=path)
 end_time = time.time() - start_time
 print('TIme taken: %f\n' % end_time)
