@@ -12,7 +12,7 @@ Instead of searching from the start to the finish, we can start two searches in 
 
 Uni-directional A*          |      Bidirectional A*
 --------------------|---------------------
-![Regular A star](img/unidirectional-astar.gif)   | ![Bidirectional A*](img/bidirectional-astar.gif)
+![Regular A star](img/unidirectional-astar.png)   | ![Bidirectional A*](img/bidirectional-astar.png)
 
 
 Time complexity:
@@ -59,9 +59,7 @@ Research Paper: https://www.cs.auckland.ac.nz/courses/compsci709s2c/resources/Mi
 2. Manhattan Distance 
 3. Diagonal Distance 
 
-# Metrics 
-
-Under progress 
+ 
 
 # Running instructions 
 
