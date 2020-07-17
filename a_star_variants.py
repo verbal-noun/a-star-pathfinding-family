@@ -64,7 +64,7 @@ def bidirectional_a_star(graph, start, goal):
 
             if next not in cost_so_far_1 or new_cost < cost_so_far_1[next]:
                 cost_so_far_1[next] = new_cost
-                priority = new_cost + heuristic(goal, next)
+                priority = new_cost + manhattan_heuristic(goal, next)
                 frontier_1.put(next, priority)
                 came_from_1[next] = current_1
 
@@ -74,7 +74,7 @@ def bidirectional_a_star(graph, start, goal):
 
             if next not in cost_so_far_2 or new_cost < cost_so_far_2[next]:
                 cost_so_far_2[next] = new_cost
-                priority = new_cost + heuristic(start, next)
+                priority = new_cost + manhattan_heuristic(start, next)
                 frontier_2.put(next, priority)
                 came_from_2[next] = current_2
 
@@ -135,7 +135,69 @@ def weighted_a_star(graph, start, goal):
                 cost_so_far[next] = new_cost
                 # Set the priority of the neighbor using the heuristic 
                 # We are taking distance to goal in consideration through heuristics 
-                priority = new_cost + heuristic(goal, next) * WEIGHT
+                priority = new_cost + manhattan_heuristic(goal, next) * WEIGHT
+                frontier.put(next, priority)
+                came_from[next] = current
+
+    
+    # Return the cost and source dictionary 
+    #return came_from, cost_so_far
+    return reconstruct_path(came_from, start, goal)
+
+
+# Dynamically weighted A* 
+def dynamic_weighted_astar(graph, start, goal, total_nodes, epsilon=2):
+    # The weight which  we will prioritise the goal 
+    weight = 1 
+    # Priority Queue track progression of nodes 
+    frontier = PriorityQueue()
+    frontier.put(start, 0)
+    
+    # Dictionary to track origin of a node 
+    came_from = {}
+    # Dictionary to track the cost to move to a particular node 
+    cost_so_far = {}
+
+    # Add starting node into the dictionaries 
+    came_from[start] = None
+    cost_so_far[start] = 0 
+
+    # Counter to track the depth 
+    count = 0
+    depth = 1 
+
+    # While the Priority queue is not empty 
+    while not frontier.isEmpty():
+        # Get the top of queue 
+        current = frontier.get()
+        count += 1
+
+        # Adjust depth of the search
+        # If we have searched all nodes in that level increase depth  
+        if count == 4 ** depth:
+            depth += 1
+
+        # check if we have reached destination 
+        if current == goal: 
+            break 
+        
+        # Dynamically calculate the weight  
+        if(depth < total_nodes): 
+            # Dynamic weighting 
+            
+        # Loop through neighbors of current node and process them 
+        for next in graph.neighbors(current):
+            # Calculate the new cost to travel to neighboring node 
+            # The new cost is cost of travelling to current node plus the cost of
+            # travelling from current node to the neighbor 
+            new_cost = cost_so_far[current] + graph.cost(current, next)
+            
+            # Check if this node hasn't been reached before or we have a new cheaper path
+            if next not in cost_so_far or new_cost < cost_so_far[next]:
+                cost_so_far[next] = new_cost
+                # Set the priority of the neighbor using the heuristic 
+                # We are taking distance to goal in consideration through heuristics 
+                priority = new_cost + manhattan_heuristic(goal, next) * weight
                 frontier.put(next, priority)
                 came_from[next] = current
 

@@ -17,7 +17,7 @@ g.walls = DIAGRAM1_WALLS
 # print()
 
 
-# Testing a-start 
+# Testing a-star 
 start, goal = (1, 4), (7, 8)
 # Calculating the cost and node origins 
 start_time = time.time()
