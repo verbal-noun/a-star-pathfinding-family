@@ -7,6 +7,7 @@ This repository is part of my work for the Melbourne Space Program. In this repo
     3. Weighted A*
     4. Dynamic Weighted A*  
 
+
 ### Bidirectional A-Star 
 Instead of searching from the start to the finish, we can start two searches in parallel―one from start to finish, and one from finish to start. When they meet, or the any of the searches reach their target we get a path. 
 
@@ -16,10 +17,10 @@ Uni-directional A*          |      Bidirectional A*
 
 
 Time complexity:
-- Regular A* => O(b<sup>d</sup>)
-- Bidirectional A* => O(b<sup>d/2</sup>)
+- Regular A*: O(b<sup>d</sup>)
+- Bidirectional A*: O(b<sup>d/2</sup>)
 
-Here **b** is the branching factor and **d** is distance of goal vertix from source 
+Here **b** is the branching factor and **d** is distance of goal vertex from source 
 
 Research Paper: https://arxiv.org/pdf/1703.03868.pdf
 
@@ -49,6 +50,21 @@ Further info:
 
 
 ### Dynamic Weighted A* 
+
+Instead of having a static weight for the cost calculation we dynamically calculate the cost function. The feature of this variant is at the start we have a high bias towards finding the goal but as we get deeper into our search we gradually revert to our regular A* algorithm. 
+
+![Weighted A*](img/weighted-astar.gif)
+
+The cost function calculation: 
+f(n) = g(n) + (1 + ε * w(n)) * h(n) where, 
+
+![Dynamic weighting equation](img/dymanic-weighting.png)
+
+Here, 
+
+**d(n)** = Depth of search. For my implementation I used a 2D grid hence level of nodes is the depth. For example the neighbors of starting node has a d(n) = 1 and the neighbors of neighbor of starting node has a d(n) = 2
+
+**N** = The estimated distance of the path. For my implementation the highest path can be the range of the sensor for the rover. I assumed a dummy value of 100 nodes as the range of my robot. 
 
 
 Research Paper: https://www.cs.auckland.ac.nz/courses/compsci709s2c/resources/Mike.d/Pohl1973WeightedAStar.pdf
