@@ -146,7 +146,7 @@ def weighted_a_star(graph, start, goal):
 
 
 # Dynamically weighted A* 
-def dynamic_weighted_astar(graph, start, goal, total_nodes, epsilon=2):
+def dynamic_weighted_astar(graph, start, goal, node_threshold, epsilon=2):
     # The weight which  we will prioritise the goal 
     weight = 1 
     # Priority Queue track progression of nodes 
@@ -182,9 +182,12 @@ def dynamic_weighted_astar(graph, start, goal, total_nodes, epsilon=2):
             break 
         
         # Dynamically calculate the weight  
-        if(depth < total_nodes): 
+        if(depth <= node_threshold): 
             # Dynamic weighting 
-            
+            weight = 1 - (depth / node_threshold)
+        else:
+            weight = 0
+
         # Loop through neighbors of current node and process them 
         for next in graph.neighbors(current):
             # Calculate the new cost to travel to neighboring node 
@@ -197,7 +200,7 @@ def dynamic_weighted_astar(graph, start, goal, total_nodes, epsilon=2):
                 cost_so_far[next] = new_cost
                 # Set the priority of the neighbor using the heuristic 
                 # We are taking distance to goal in consideration through heuristics 
-                priority = new_cost + manhattan_heuristic(goal, next) * weight
+                priority = new_cost + manhattan_heuristic(goal, next) * (1 + weight * epsilon)
                 frontier.put(next, priority)
                 came_from[next] = current
 
