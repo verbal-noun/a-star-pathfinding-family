@@ -86,22 +86,21 @@ def bidirectional_a_star(graph, start, goal):
 '''
     Weighting sacrifices solution optimality to speed up the search. The larger the weight, 
     the more greedy the search.
-    Weighted A* does not provide the optimal path. Rather speeds up the process. 
+    Weighted A* does not provide the optimal path. Rather speeds up the process. z
 
     The movement cost used for this is: 
-    f = w1 * g + w2 * h 
+    f = g + w2 * h 
     Here, 
     g = g-cost -> Distance from start 
     h = h-cost -> Distance from goal 
-    w1 = How much we consider the g-cost
-    w2 = How much we consider the heuristic;
+    w2 = (1 + e) where e > 0 = How much we consider the heuristic;
     For this algorithm 
-    w1 = 1; w2 = 10   
+    e = 4. So w2 = 5 => Theoretically return us a solution 5 times faster   
 '''
 
 def weighted_a_star(graph, start, goal):
     # The weight which  we will prioritise the goal 
-    WEIGHT = 10 
+    WEIGHT = 5 
     # Priority Queue track progression of nodes 
     frontier = PriorityQueue()
     frontier.put(start, 0)

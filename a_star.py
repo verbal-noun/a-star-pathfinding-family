@@ -1,3 +1,5 @@
+import math 
+
 # Structure of the graph which we will traverse  
 class SimpleGraph:
     def __init__(self):
@@ -127,11 +129,25 @@ def join_paths(path_1, path_2):
 
 # The heuristic used by the a-star algorithm 
 # This is used to calculate the distance of current node form the goal too 
-def heuristic(a, b):
+def manhattan_heuristic(a, b):
     (x1, y1) = a
     (x2, y2) = b
 
     return abs(x1 - x2) + abs(y1 - y2)
+
+# Diagonal heuristic which considers the diagonal value of nodes 
+def diagonal_heuristic(a, b):
+    (x1, y1) = a
+    (x2, y2) = b
+
+    return max(abs(x1 - x2), abs(y1 - y2))
+
+# Taking the euclidian distance as heuristics 
+def euclidian_heuristic(a, b):
+    (x1, y1) = a
+    (x2, y2) = b
+
+    return math.sqrt((x1 - x2)**2 + (y1 - y2)**2)
 
 # Implementation of the a-star search algorithm 
 def a_star_search(graph, start, goal):
@@ -169,7 +185,7 @@ def a_star_search(graph, start, goal):
                 cost_so_far[next] = new_cost
                 # Set the priority of the neighbor using the heuristic 
                 # We are taking distance to goal in consideration through heuristics 
-                priority = new_cost + heuristic(goal, next)
+                priority = new_cost + manhattan_heuristic(goal, next)
                 frontier.put(next, priority)
                 came_from[next] = current
 
