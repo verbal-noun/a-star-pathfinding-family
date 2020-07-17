@@ -1,8 +1,11 @@
 import time 
-from a_star import * 
-from other_algorithms import *
-from a_star_variants import *
-# Import necessary diagrams and grid visualizer 
+
+# Importing a-star and family  
+from src.a_star import * 
+from src.a_star_variants import *
+from src.other_algorithms import *
+
+# Importing necessary diagrams and grid visualizer 
 from maze.diagrams import *
 from maze.grid import draw_grid
 
@@ -21,7 +24,7 @@ print('\n')
 
 # Testing variants  
 start_time = time.time()
-path = weighted_a_star(grid, start, goal)
+path = bidirectional_a_star(grid, start, goal)
 draw_grid(grid, width=3, path=path)
 end_time = time.time() - start_time
 print('TIme taken: %f\n' % end_time)

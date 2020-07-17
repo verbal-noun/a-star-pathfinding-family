@@ -1,4 +1,4 @@
-from a_star import *
+from src.a_star import *
 
 # Implementation of bidirectional a-start
 # This algorithm will start looking for a path from both the start and the goal 

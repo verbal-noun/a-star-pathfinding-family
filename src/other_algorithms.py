@@ -1,4 +1,4 @@
-from a_star import *
+from src.a_star import PriorityQueue
 
 # Dijkstra's Search implementation 
 def dijkstra_search(graph, start, goal):
@@ -51,7 +51,13 @@ class Queue:
     
     def get(self):
         return self.elements.popleft()
-        
+
+'''
+    Parameters: 
+        graph - The graph it will be searching on and of WeightedGrid class 
+        start - Starting coordinate in form (x, y)
+        goal - Target coordinate in form (x, y)
+'''
 def bfs_search(graph, start, goal):
     # We will print what we find 
     frontier = Queue()
