@@ -116,3 +116,6 @@ You should also make sure the start and goal coordinates are valid as different 
 start, goal = (x, y), (u, v)
 ```
 The diagrams also vary on the weight of each cell as well as wall configuration. 
+
+
+**Note**: Any kind contribution is welcome. Please feel free to open a pull request and I will review it as soon as possible.  
