@@ -3,26 +3,17 @@ from a_star import *
 from grid import * 
 from other_algorithms import *
 from a_star_variants import *
+from diagrams import *
 
 
-g = SquareGrid(30, 15)
-g.walls = DIAGRAM1_WALLS  
+grid = diagram3
 
-#parents  = bfs_search(g, (8, 7), (17, 2))
-#draw_grid(g, width=2, point_to=parents, start=(8,7), goal=(17, 2))
-#came_from, cost_so_far = dijkstra_search(diagram4, (1, 4), (7, 8))
-# draw_grid(diagram4, width=3, point_to=came_from, start=(1, 4), goal=(7, 8))
-# print()
-# draw_grid(diagram4, width=3, number=cost_so_far, start=(1, 4), goal=(7, 8))
-# print()
-
-
-# Testing a-star 
-start, goal = (1, 4), (7, 8)
+#Testing a-star 
+start, goal = (1, 4), (38, 28)
 # Calculating the cost and node origins 
 start_time = time.time()
-path = a_star_search(diagram4, start, goal)
-draw_grid(diagram4, width=3, path=path)
+path = a_star_search(grid, start, goal)
+draw_grid(grid, width=3, path=path)
 end_time = time.time() - start_time
 print('TIme taken: %f\n' % end_time)
 print('\n')
@@ -30,8 +21,10 @@ print('\n')
 
 # Testing variants  
 start_time = time.time()
-path = dynamic_weighted_astar(diagram4, start, goal, 50)
-draw_grid(diagram4, width=3, path=path)
+path = bidirectional_a_star(grid, start, goal)
+draw_grid(grid, width=3, path=path)
 end_time = time.time() - start_time
 print('TIme taken: %f\n' % end_time)
-#draw_grid(diagram4, width=3, path=path)
+
+#draw_grid(diagram3, number=diagram3.weights)
+#print(diagram1.walls)
