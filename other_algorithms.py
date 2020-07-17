@@ -36,6 +36,22 @@ def dijkstra_search(graph, start, goal):
 
 
 # Implementation of BFS 
+import collections
+
+# This queue class is just a wrapper around deque class 
+class Queue: 
+    def __init__(self):
+        self.elements = collections.deque(); 
+
+    def isEmpty(self):
+        return len(self.elements) == 0
+
+    def put(self, x):
+        self.elements.append(x)
+    
+    def get(self):
+        return self.elements.popleft()
+        
 def bfs_search(graph, start, goal):
     # We will print what we find 
     frontier = Queue()

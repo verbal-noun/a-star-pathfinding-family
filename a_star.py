@@ -1,42 +1,5 @@
 import math 
 
-# Structure of the graph which we will traverse  
-class SimpleGraph:
-    def __init__(self):
-        self.edges = {}
-
-    def neighbors(self, id):
-        return self.edges[id]
-
-
-# Sample implementation of the graph we made 
-example_graph = SimpleGraph()
-example_graph.edges = {
-    'A': ['B'],
-    'B': ['A', 'C', 'D'],
-    'C': ['A'],
-    'D': ['E', 'A'],
-    'E': ['B']
-}
-
-# Implementation of the queue going to be used for BFS 
-import collections
-
-# This queue class is just a wrapper around deque class 
-class Queue: 
-    def __init__(self):
-        self.elements = collections.deque(); 
-
-    def isEmpty(self):
-        return len(self.elements) == 0
-
-    def put(self, x):
-        self.elements.append(x)
-    
-    def get(self):
-        return self.elements.popleft()
-
-
 # Implementing a priority queue with heaps 
 import heapq 
 
