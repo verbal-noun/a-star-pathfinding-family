@@ -58,7 +58,7 @@ Instead of having a static weight for the cost calculation we dynamically calcul
 The cost function calculation: 
 f(n) = g(n) + (1 + ε * w(n)) * h(n) where, 
 
-![Dynamic weighting equation](img/dymanic-weighting.png)
+![Dynamic weighting equation](img/dynamic-weighting.png)
 
 Here, 
 
