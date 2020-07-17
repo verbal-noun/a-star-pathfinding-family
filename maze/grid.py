@@ -1,4 +1,4 @@
-from diagrams import WeightedGrid 
+from maze.diagrams import WeightedGrid 
 
 # utility functions for the map 
 def from_id_width(id, width):
