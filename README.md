@@ -23,7 +23,7 @@ Formal of defining this.
 
 Regular A*          |        Weighted A*
 --------------------|---------------------
-img/base-astar.gif   | img/weighted-astar.gif
+![Regular A star](img/base-astar.gif)   | ![Weighted A*](img/weighted-astar.gif)
 
 ### Dynamic Weighted A* 
 
