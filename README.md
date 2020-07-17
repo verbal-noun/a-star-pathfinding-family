@@ -67,13 +67,20 @@ Here,
 **N** = The estimated distance of the path. For my implementation the highest path can be the range of the sensor for the rover. I assumed a dummy value of 100 nodes as the range of my robot. 
 
 
+**Note:** I have not extensively tested Dynamic weighted approach and have not found any proper code implementation which I can compare it with. Hence, please take the performance of this with caution. 
+
+
 Research Paper: https://www.cs.auckland.ac.nz/courses/compsci709s2c/resources/Mike.d/Pohl1973WeightedAStar.pdf
 
 
+
 # Implemented Heuristics 
-1. Euclidean Heuristic 
-2. Manhattan Distance 
-3. Diagonal Distance 
+
+Name of Heuristic | Equation of Heuristic 
+------------------|----------------------
+Euclidean Distance | h(n) = sqrt((x<sub>goal</sub> - x)<sup>2</sup> + (y<sub>goal</sub> - y)<sup>2</sup>)
+Manhattan Distance | h(n) = abs((x<sub>goal</sub> - x) + abs((y<sub>goal</sub> - y))
+Diagonal Distance | h(n) = max(abs((x<sub>goal</sub> - x), abs((y<sub>goal</sub> - y)))
 
  
 
