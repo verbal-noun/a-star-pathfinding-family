@@ -83,6 +83,21 @@ Manhattan Distance | h(n) = abs((x<sub>goal</sub> - x)) + abs((y<sub>goal</sub> 
 Diagonal Distance | h(n) = max(abs((x<sub>goal</sub> - x)), abs((y<sub>goal</sub> - y)))
 
  
+# Metrics 
+
+#### Map: OpenGrid - Real space without dimensions
+
+Algorithm | # times run | Median (ms) | Mean (ms) | Std. Deviation | Avg. Path Length (# Nodes)
+----------|-------------|-------------|-----------|----------------|------------------
+Base A*   | 3025        | 23.943662643432617 | 26.743000282728968 | 7.554963703072549 | 62.0
+Bidirectional A* | 2960 | 17.917275428771973| 19.237902518865223 | 5.354171559235531| 62.0
+Weighted A*| 2910 | 0.9999275207519531 | 1.4432568730357587 | 0.6828766958337971 | 64.0
+Dynamic Weighted A* | 3105 | 8.986949920654297 | 10.285768339983315 | 2.789930903729083 | 64.0
+
+Note: 
+- These metrics are meant to give us relative understanding rather than absolute performance 
+- The heuristic used for all algorithms is Manhattan Distance 
+
 
 # Running instructions 
 
@@ -102,7 +117,7 @@ Here are some sample outputs of different algorithms run on the same diagram:
 
 ![Regular A*](img/regular-output.png)
 
-![Bidirection A*](img/bidirectional-output.png)
+![Bidirectional A*](img/bidirectional-output.png)
 
 ![Weighted A*](img/weighted-output.png)
 
