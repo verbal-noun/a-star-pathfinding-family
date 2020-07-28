@@ -87,8 +87,8 @@ Diagonal Distance | h(n) = max(abs((x<sub>goal</sub> - x)), abs((y<sub>goal</sub
 
 #### Map: OpenGrid - Real space without dimensions
 
-Algorithm | # times run | Median (ms) | Mean (ms) | Std. Deviation | Avg. Path Length (# Nodes)
-----------|-------------|-------------|-----------|----------------|------------------
+Algorithm | # times run | Median (ms) | Mean (ms) | Std. Deviation |   Avg. Path Length (# Nodes)   
+----------|-------------|-------------|-----------|----------------|---------------------------
 Base A*   | 3025        | 23.943662643432617 | 26.743000282728968 | 7.554963703072549 | 62.0
 Bidirectional A* | 2960 | 17.917275428771973| 19.237902518865223 | 5.354171559235531| 62.0
 Weighted A*| 2910 | 0.9999275207519531 | 1.4432568730357587 | 0.6828766958337971 | 64.0
