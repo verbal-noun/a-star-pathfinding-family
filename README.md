@@ -99,7 +99,7 @@ Note:
 - The heuristic used for all algorithms is Manhattan Distance 
 
 
-#### Map: OpenGrid - Real space without dimensions
+#### Map: Randomly Weighted Grids of Size 40 by 40
 
 Algorithm | # times run | Median (ms) | Mean (ms) | Std. Deviation |   Avg. Path Length 
 ----------|-------------|-------------|-----------|----------------|---------------------------
@@ -108,7 +108,6 @@ Bidirectional A* | 3001 | 15.959024429321289| 17.706753054844146 | 4.26222389468
 Weighted A*| 3027 | 0.9982585906982422 | 1.320655486904279 | 0.5098137747095521 | 64.0
 Dynamic Weighted A* | 2956 | 3.988981246948242 | 3.995342248186207 | 1.0668236012002967 | 64.0
 
-
 ### Key Insights 
 1. Weighted A* is generally much faster than other algorithms but its high bias is a risk and can fail in certain situations. 
 2. Dynamic Weighted A* although relatively slower than static weighted in the long run the path length can be more optimal. 
@@ -116,6 +115,13 @@ Dynamic Weighted A* | 2956 | 3.988981246948242 | 3.995342248186207 | 1.066823601
 4. Bidirectional generally produces an optimal path but the time consumption is high. 
 5. Base A-Star is slower but the path generated is the most optimal 
 
+To run benchmarking yourself, run the following commands 
+
+To see the output of base-a-star and different variants together, simply run. It makes 1-2 mins to run the script due to the high volume of tests.  
+
+```python3 
+python benchmark.py
+```
 
 # Running instructions 
 
