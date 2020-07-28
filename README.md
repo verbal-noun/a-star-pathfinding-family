@@ -151,13 +151,13 @@ There are 5 different diagram choices available named diagram1 .... digram5 for 
 
 You can select the diagram of your choice 
 
-```
+```python
 grid = diagram[You choice of diagram no.]
 ```
 
 You should also make sure the start and goal coordinates are valid as different dimensions. The diagrams can be found in '/maze/diagrams.py'
 
-``` 
+```python
 start, goal = (x, y), (u, v)
 ```
 The diagrams also vary on the weight of each cell as well as wall configuration. 
