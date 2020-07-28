@@ -19,10 +19,10 @@ times = {f.__name__: [] for f in functions}
 path = {f.__name__: 0 for f in functions}
 
 # Running the tests 
-graph = diagram5
+graph = diagram3
 start, goal = (1, 4), (38, 28)
 
-for i in range(300):
+for i in range(3000):
     for _ in range(len(functions)):
         func = random.choice(functions)
         t0 = time.time()

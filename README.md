@@ -86,12 +86,17 @@ Diagonal Distance | h(n) = max(abs((x<sub>goal</sub> - x)), abs((y<sub>goal</sub
 
 # Running instructions 
 
-To see the output of different functions simply run 
+To see the output of base-a-star and different variants together, simply run 
 
 ```python3 
-python tester.py
+python run.py
 ```
 
+An additional file has been added if you want to individually alter, test or run any of algorithms
+
+```python3
+python tester.py
+```
 
 Here are some sample outputs of different algorithms run on the same diagram: 
 
@@ -102,8 +107,9 @@ Here are some sample outputs of different algorithms run on the same diagram:
 ![Weighted A*](img/weighted-output.png)
 
 
-### Different Diagrams 
-There are 4 different diagram choices available named diagram1 .... digram4 
+## Different Diagrams 
+There are 5 different diagram choices available named diagram1 .... digram5 for testing purposes.You can add maps of your own according to the specifications. To know more about the maps used check the README file inside the 'maze' folder. 
+
 You can select the diagram of your choice 
 
 ```
