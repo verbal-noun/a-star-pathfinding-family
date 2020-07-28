@@ -90,13 +90,31 @@ Diagonal Distance | h(n) = max(abs((x<sub>goal</sub> - x)), abs((y<sub>goal</sub
 Algorithm | # times run | Median (ms) | Mean (ms) | Std. Deviation |   Avg. Path Length 
 ----------|-------------|-------------|-----------|----------------|---------------------------
 Base A*   | 3025        | 23.943662643432617 | 26.743000282728968 | 7.554963703072549 | 62.0
-Bidirectional A* | 2960 | 17.917275428771973| 19.237902518865223 | 5.354171559235531| 62.0
+Bidirectional A* | 2960 | 17.917275428771973| 19.237902518865223 | 5.354171559235531 | 62.0
 Weighted A*| 2910 | 0.9999275207519531 | 1.4432568730357587 | 0.6828766958337971 | 64.0
 Dynamic Weighted A* | 3105 | 8.986949920654297 | 10.285768339983315 | 2.789930903729083 | 64.0
 
 Note: 
 - These metrics are meant to give us relative understanding rather than absolute performance 
 - The heuristic used for all algorithms is Manhattan Distance 
+
+
+#### Map: OpenGrid - Real space without dimensions
+
+Algorithm | # times run | Median (ms) | Mean (ms) | Std. Deviation |   Avg. Path Length 
+----------|-------------|-------------|-----------|----------------|---------------------------
+Base A*   | 3016        | 22.937893867492676 | 24.728299056819644 | 5.560186372625823 | 62.0
+Bidirectional A* | 3001 | 15.959024429321289| 17.706753054844146 | 4.262223894687466 | 62.0
+Weighted A*| 3027 | 0.9982585906982422 | 1.320655486904279 | 0.5098137747095521 | 64.0
+Dynamic Weighted A* | 2956 | 3.988981246948242 | 3.995342248186207 | 1.0668236012002967 | 64.0
+
+
+### Key Insights 
+1. Weighted A* is generally much faster than other algorithms but its high bias is a risk and can fail in certain situations. 
+2. Dynamic Weighted A* although relatively slower than static weighted in the long run the path length can be more optimal. 
+3. Both statically and dynamic weighted A* is faster but the path is not optimal. 
+4. Bidirectional generally produces an optimal path but the time consumption is high. 
+5. Base A-Star is slower but the path generated is the most optimal 
 
 
 # Running instructions 
