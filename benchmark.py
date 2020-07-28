@@ -12,8 +12,7 @@ from maze.diagrams import *
 
 
 # Load the functions 
-#functions = (a_star_search, bidirectional_a_star, weighted_a_star) 
-functions = [dynamic_weighted_astar] 
+functions = [a_star_search, bidirectional_a_star, weighted_a_star, dynamic_weighted_astar] 
 
 #print(type(functions))
 times = {f.__name__: [] for f in functions}
