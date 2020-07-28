@@ -12,15 +12,18 @@ from maze.diagrams import *
 
 
 # Load the functions 
-functions = a_star_search, bidirectional_a_star, weighted_a_star 
+#functions = (a_star_search, bidirectional_a_star, weighted_a_star) 
+functions = [dynamic_weighted_astar] 
+
+#print(type(functions))
 times = {f.__name__: [] for f in functions}
 path = {f.__name__: 0 for f in functions}
 
 # Running the tests 
-graph = diagram3
+graph = diagram5
 start, goal = (1, 4), (38, 28)
 
-for i in range(3000):
+for i in range(300):
     for _ in range(len(functions)):
         func = random.choice(functions)
         t0 = time.time()

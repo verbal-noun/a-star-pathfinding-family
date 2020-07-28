@@ -25,6 +25,6 @@ print(len(path))
 
 # Trying a dimension specific map 
 grid2 = diagram3
-path = a_star_search(grid2, start, goal)
+path = weighted_a_star(grid2, start, goal)
 # Print the length of path 
 print(len(path))
