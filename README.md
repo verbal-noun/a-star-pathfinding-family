@@ -164,3 +164,9 @@ The diagrams also vary on the weight of each cell as well as wall configuration.
 
 
 **Note**: Any kind contribution is welcome. Please feel free to open a pull request and I will review it as soon as possible.  
+
+
+# Attributions 
+
+- GIFs used for Weighted and Dynamic A* are taken from Wikipedia 
+- Initial SqaureGrid Maze code is taken from [Introduction to A* by Amit](http://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html#:~:text=A*%20is%20the%20most%20popular,a%20heuristic%20to%20guide%20itself.)
