@@ -22,7 +22,7 @@ class SquareGrid:
 
     # Check if current location is blocked for not
     def passable(self, id):
-        return True if self.walls[id] == 1 else False
+        return False if self.walls[id] == 1 else True
 
     # Check the neighbors of the current grid
     def neighbors(self, id):
@@ -32,8 +32,8 @@ class SquareGrid:
         if(x + y) % 2 == 0:
             result.reverse()
         # Check if the neighbors are in the map and not blocked
-        result = filter(self.in_bounds, result)
-        result = filter(self.passable, result)
+        result = list(filter(self.in_bounds, result))
+        result = list(filter(self.passable, result))
 
         return result
 
@@ -77,7 +77,7 @@ class OpenGrid:
 
     # Check if current location is blocked for not
     def passable(self, id):
-        return True if self.walls[id] == 1 else False
+        return False if self.walls[id] == 1 else True
 
     # Check the neighbors of the current grid
     def neighbors(self, id):
@@ -87,7 +87,7 @@ class OpenGrid:
         if(x + y) % 2 == 0:
             result.reverse()
         # Check if the neighbors are not blocked
-        result = filter(self.passable, result)
+        result = list(filter(self.passable, result))
 
         return result
 
@@ -138,9 +138,9 @@ for x in range(40):
 
 
 # Implementation for weighted grid
-diagram4 = WeightedGrid(10, 10)
+diagram4 = WeightedGrid(40, 40)
 walls = [(1, 7), (1, 8), (2, 7), (2, 8), (3, 7), (3, 8)]
-diagram4.add_walls(add_walls)
+diagram4.add_walls(walls)
 diagram4.weights = {loc: 5 for loc in [(3, 4), (3, 5), (4, 1), (4, 2),
                                        (4, 3), (4, 4), (4, 5), (4, 6),
                                        (4, 7), (4, 8), (5, 1), (5, 2),
