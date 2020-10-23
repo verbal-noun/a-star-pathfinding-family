@@ -2,6 +2,7 @@
 This file is provided for additional testing of the different algorithms
 '''
 
+from new_maze.generate_maze import maze_generator
 import time
 
 # Importing a-star and family
@@ -12,7 +13,7 @@ from src.other_algorithms import *
 # Importing necessary diagrams and grid visualizer
 from maze.diagrams import *
 from maze.grid import draw_grid
-
+from new_maze.random_maze import *
 
 # Defining start and goal
 start, goal = (1, 4), (38, 28)
@@ -27,8 +28,7 @@ start, goal = (1, 4), (38, 28)
 # # Print the length of path
 # print(len(path))
 
-grid4 = diagram5
-
-# print(grid4.walls)
-path = a_star_search(grid4, start, goal)
+maze_parameters = maze_generator(10, 10, 'light')
+# print(*maze_arguments)
+path = a_star_search(*maze_parameters)
 print(path)
