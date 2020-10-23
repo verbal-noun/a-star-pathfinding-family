@@ -29,6 +29,6 @@ start, goal = (1, 4), (38, 28)
 
 grid4 = diagram5
 
-print(grid4.walls)
+# print(grid4.walls)
 path = a_star_search(grid4, start, goal)
 print(path)
